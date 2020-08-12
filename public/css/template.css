@@ -1,0 +1,29 @@
+body {
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+body .img-landscape {
+  position: fixed;
+  bottom: 0;
+  z-index: -99;
+  width: 100%;
+  max-width: 500px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 50%;
+}
+
+.btn-primary {
+  background-color: #5599ff !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: #5599ff !important;
+}
+
+.text-primary {
+  color: #5599ff !important;
+}
+/*# sourceMappingURL=template.css.map */

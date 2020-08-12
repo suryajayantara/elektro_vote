@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACI,IADA,CACA,OAAO,CAAC;EACJ,gBAAgB,EAAE,IAAI;EACtB,WAAW,EAAE,MAAM;CACtB",
+    "sources": [
+        "login-regis.scss"
+    ],
+    "names": [],
+    "file": "login-regis.css"
+}

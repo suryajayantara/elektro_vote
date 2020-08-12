@@ -14,5 +14,26 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+        return redirect()->route('login');
+});
+
+
+Route::get('/vote', function () {
+    return view('pages/voting');
+});
+
+
+Auth::routes();
+
+route::get('/form','AdminController@indexUser');
+route::post('/registerUser','AdminController@storeUser');
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware('role:admin')->get('/dashboard','HomeController@index')->name('dashboard');
+
+// User
+
+Route::group(['prefix' => 'users'], function () {
+    Route::get('/','StudentController@index')->name('user.dashboard');
+    Route::get('rules','StudentController@viewRules')->name('user.rules');
 });

@@ -1,0 +1,63 @@
+body .header {
+  background-color: #e17055;
+}
+
+body .header .title {
+  height: 130px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  position: relative;
+  padding-left: 15px;
+  border-radius: 5px 5px 0 0;
+}
+
+body .header .title .greeting {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+}
+
+body .header .title .name {
+  color: white;
+  font-size: 15px;
+}
+
+body .header .title .btn-keluar {
+  position: absolute;
+  right: 15px;
+}
+
+body .content h5 {
+  font-size: 18px;
+}
+
+body .content a {
+  text-decoration: none;
+}
+
+body .content .cardku {
+  background-color: #fff;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-left: solid #e17055 5px;
+}
+
+body .content .cardku img {
+  margin: auto;
+}
+
+body .content .cardku h3 {
+  font-size: 20px;
+}
+/*# sourceMappingURL=index.css.map */

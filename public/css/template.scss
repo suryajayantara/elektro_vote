@@ -1,0 +1,24 @@
+body {
+    background-color: #f0f4f7;
+    overflow-x: hidden;
+    .img-landscape {
+        position: fixed;
+        bottom: 0;
+        z-index: -99;
+        width: 100%;
+        max-width: 500px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 50%;
+    }
+}
+
+.btn-primary {
+    background-color: #5599ff !important;
+}
+.btn-outline-primary:hover {
+    background-color: #5599ff !important;
+}
+.text-primary {
+    color: #5599ff !important;
+}

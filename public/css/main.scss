@@ -1,0 +1,32 @@
+body {
+    .header {
+        background-color: #fff;
+        .title {
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border-radius: 5px 5px 0 0;
+            .kembali {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 15px;
+                width: 33px;
+                height: 33px;
+                background-color: rgba($color: #fff, $alpha: 0.3);
+                color: #fff;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .action-group {
+            .full-width {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,48 @@
+body {
+    .header {
+        background-color: #5599ff;
+
+        .title {
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            position: relative;
+            padding-left: 15px;
+            border-radius: 5px 5px 0 0;
+            .greeting {
+                color: rgba($color: #fff, $alpha: 0.8);
+                font-size: 16px;
+            }
+            .name {
+                color: white;
+                font-size: 20px;
+                text-transform: uppercase;
+            }
+            .btn-keluar {
+                position: absolute;
+                right: 15px;
+            }
+        }
+    }
+    .content {
+        h5 {
+            font-size: 18px;
+        }
+        a {
+            text-decoration: none;
+        }
+        .cardku {
+            background-color: #fff;
+            align-items: center;
+            border-left: solid #5599ff 5px;
+            img {
+                margin: auto;
+            }
+            h3 {
+                font-size: 20px;
+            }
+        }
+    }
+}
