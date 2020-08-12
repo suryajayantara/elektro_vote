@@ -15,6 +15,9 @@ class CreateCandidatesTable extends Migration
     {
         Schema::create('candidates', function (Blueprint $table) {
             $table->id();
+            $table->string('nim',15);
+            $table->string('nama_calon',100);
+            $table->enum('JenisKelamin', ['L','P']);
             $table->timestamps();
         });
     }
