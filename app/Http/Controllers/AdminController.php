@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
-use PDO;
 
 class AdminController extends Controller
 {
@@ -14,8 +13,11 @@ class AdminController extends Controller
         $this->middleware('role:admin'); 
     }
 
+    public function index(){
+        return view('admin.dashboard');
+    }
 
-    public function indexUser()
+    public function formUser()
     {
         return view('admin/form-user');
     }
@@ -23,20 +25,45 @@ class AdminController extends Controller
     public function storeUser(Request $request)
     {
 
-        $kelas = $request->semester.$request->prodi.$request->kelas;
+        $kelas = $request->semester. "-" .$request->prodi. "-" .$request->kelas;
 
-        $query = User::create([
-            'name' => $request->name,
-            'email' => $request->nim,
-            'nim' => $request->nim,
-            'kelas' => $kelas,
-            'status_pilih' => false,
-            'password' => bcrypt($request->nim),
-        ]);
-        $query->assignRole('mahasiswa');
-        
-        if($query){
-            echo "Ok !";        
+        try {
+            $query = User::create([
+                'name' => $request->name,
+                'email' => $request->nim,
+                'nim' => $request->nim,
+                'prodi' => $request->prodi,
+                'kelas' => $kelas,
+                'status_pilih' => false,
+                'password' => bcrypt($request->nim),
+            ]);
+            $query->assignRole('mahasiswa');
+
+            if($query){
+                return redirect()->back()->with('success','Data Berhasil Masuk !');
+            }
+
+        } catch (\Throwable $th) {
+            report($th);
+            return false;
         }
+
+
+    }
+
+    public function indexUser(Request $request)
+    {
+            $kelas = $request->semester. "-" .$request->prodi. "-" .$request->kelas;
+    
+            $query = User::where('kelas',$kelas)->orderBy('nim','ASC')->get();
+            return view('admin.user-list',[
+                'datas' => $query
+            ]);
+
+    }
+
+    public function searchUser()
+    {
+        return view('admin/showVoter');
     }
 }

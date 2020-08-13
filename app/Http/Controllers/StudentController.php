@@ -21,4 +21,9 @@ class StudentController extends Controller
         return view('pages/rules');
     }
 
+    public function viewVote()
+    {
+        return view('pages/voting');
+    }
+
 }

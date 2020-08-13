@@ -1,9 +1,9 @@
 body .header {
-  background-color: #e17055;
+  background-color: #0984e3;
 }
 
 body .header .title {
-  height: 130px;
+  height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -50,7 +50,7 @@ body .content .cardku {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-left: solid #e17055 5px;
+  border-left: solid #0984e3 5px;
 }
 
 body .content .cardku img {

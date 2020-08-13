@@ -17,8 +17,7 @@
                             <div class="title">
                                 <h3 class="greeting m-0 font-weight-normal">Selamat Pagi</h3>
                                 <h4 class="name">{{ Auth::user()->name }}</h4>
-                                <p class="lead text-white">{{ Auth::user()->nim }}</p>
-                                <a class="btn btn-sm btn-outline-light btn-keluar" href="{{ route('logout') }}"
+                                {{-- <a class="btn btn-sm btn-outline-light btn-keluar" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Keluar') }}
@@ -26,7 +25,16 @@
                                 </a>                           
                                 <form id="logout-form" action="" method="POST" style="display: none;">
                                     {{ csrf_field() }}
-                                </form>
+                                </form> --}}
+                                <a class="btn btn-sm btn-outline-light btn-keluar" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Keluar') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
                             </div>
 
                         </div>
@@ -56,7 +64,7 @@
                         </div>
                     </a>
 
-                    <a href="{{ url('/manage') }}">
+                    <a href="{{ url('/addVoters') }}">
                         <div class="container">
                             <div class="cardku row rounded shadow-sm p-2 mb-3">
                                 <div class="col-4 p-0 d-flex align-items-center">

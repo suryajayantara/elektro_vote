@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,22 +19,25 @@ Route::get('/', function () {
 });
 
 
-Route::get('/vote', function () {
-    return view('pages/voting');
-});
-
-
+// Default Routes
 Auth::routes();
 
-route::get('/form','AdminController@indexUser');
-route::post('/registerUser','AdminController@storeUser');
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::middleware('role:admin')->get('/dashboard','HomeController@index')->name('dashboard');
+Route::get('/home', function(){
+    return view('welcome');
+})->name('home');
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/', 'AdminController@index')->name('admin.dash');
+    Route::get('/addvote', 'AdminController@formUser')->name('admin.addVote');
+    Route::get('/showvote', 'AdminController@searchUser')->name('admin.search');
+    Route::post('/showvote', 'AdminController@indexUser')->name('admin.showuser');
+    Route::post('/store', 'AdminController@storeUser')->name('admin.store');
+});
 
 // User
-
 Route::group(['prefix' => 'users'], function () {
     Route::get('/','StudentController@index')->name('user.dashboard');
     Route::get('rules','StudentController@viewRules')->name('user.rules');
+    Route::get('vote','StudentController@viewVote')->name('user.vote');
 });

@@ -9,42 +9,42 @@
 @section('title','Voting ')
 
 @section('asal')
-href="{{ url('/') }}"
+href="{{ url('/users') }}"
 @endsection
 
-@section('form')
+@section('table')
 
-    <div class="column">
-        <div class="row m-1 p-1">
-
-            <div class="col-sm-4 m-1">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <a href="#" class="btn btn-primary justify-content-center">Pilih Pasangan </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-sm-4 m-1">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <a href="#" class="btn btn-primary">Pilih Pasangan </a>
-                </div>
-              </div>
-            </div>
-            
-            <div class="col-sm-4 m-1">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <a href="#" class="btn btn-primary">Pilih Pasangan </a>
-                  </div>
-                </div>
-              </div>
+<div class="container">
+  <div class="card-deck mt-5">
+      <div class="card">
+          <img src="{!! asset('img/bat.jpg') !!}" class="card-img-top rounded-circle p-4" alt="...">
+          <div class="card-body">
+              <h5 class="card-title">Batman</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                  additional content. This content is a little bit longer.</p>
+              <button type="button" class="btn btn-primary">Slap Vote Now!</button>
           </div>
-    </div>
+      </div>
+      <div class="card">
+          <img src="{!! asset('img/sup.jpg') !!}" class="card-img-top rounded-circle p-4" alt="...">
+          <div class="card-body">
+              <h5 class="card-title">Clark Ken-Tod</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                  additional content. This content is a little bit longer.</p>
+              <button type="button" class="btn btn-primary">Slap Vote Now!</button>
+          </div>
+      </div>
+      <div class="card">
+          <img src="{!! asset('img/wonder.jpg') !!}" class="card-img-top rounded-circle p-4" alt="...">
+          <div class="card-body">
+              <h5 class="card-title">Pejuang Feminisme</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                  additional content. This content is a little bit longer.</p>
+              <button type="button" class="btn btn-primary">Slap Vote Now!</button>
+          </div>
+      </div>
+  </div>
+</div>
 
 @endsection
 

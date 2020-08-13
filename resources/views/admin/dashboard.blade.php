@@ -7,7 +7,9 @@
 @section('title','E-Voting Elektro')
 
 @section('content')  
-<section id="HEADER" class="container">
+
+    {{-- Card --}}
+    <section id="HEADER" class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 col-12">
                 <div class="row">
@@ -16,17 +18,16 @@
                             
                             <div class="title">
                                 <h3 class="greeting m-0 font-weight-normal">Selamat Pagi</h3>
-                                <h4 class="name">{{ Auth::user()->name }}</h4>
-                                <p class="lead text-white">Admin : {{ Auth::user()->nim }}</p>
+                                <h4 class="name">Admin {{ Auth::user()->name }}</h4>
                                 <a class="btn btn-sm btn-outline-light btn-keluar" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
+                                       onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Keluar') }}
-                                 
-                                </a>                           
-                                <form id="logout-form" action="" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
                             </div>
 
                         </div>
@@ -39,7 +40,7 @@
     <section id="CONTENT" class="container mt-4 content">
         <div class="row justify-content-center">
                 <div class="col-lg-8 col-12">                   
-                    <a href="{{ ('stock') }}">
+                    <a href="{{ route('admin.addVote') }}">
                         <div class="container">
                             <div class="cardku row rounded shadow-sm p-2 my-3">
                                 <div class="col-4 p-0 d-flex align-items-center">
@@ -49,26 +50,21 @@
                                     <h3 class="m-0 text-dark">Tambahkan Pemilih</h3>
                                     <p class="m-0 text-secondary">Kelola data barang anda disini</p>
                                 </div>
-                                <!-- <div class="col-1 p-0 d-flex align-items-center justify-content-center">
-                                    <i class="fas fa-arrow-right"></i>
-                                </div> -->
                             </div>
                         </div>
                     </a>
 
-                    <a href="{{ url('/manage') }}">
+
+                    <a href="{{ route('admin.search') }}">
                         <div class="container">
                             <div class="cardku row rounded shadow-sm p-2 mb-3">
                                 <div class="col-4 p-0 d-flex align-items-center">
                                     <img src="{!! asset('img/stok.svg') !!}" alt="">
                                 </div>
                                 <div class="col-8 d-flex flex-column justify-content-center">
-                                    <h3 class="m-0 text-dark">Lihat Pemilih</h3>
+                                    <h3 class="m-0 text-dark">Data Pemilih</h3>
                                     <p class="m-0 text-secondary">Kelola dan cetak laporan stok disini</p>
                                 </div>
-                                <!-- <div class="col-1 p-0 d-flex align-items-center justify-content-center">
-                                    <i class="fas fa-arrow-right"></i>
-                                </div> -->
                             </div>
                         </div>
                     </a>
