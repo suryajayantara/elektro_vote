@@ -30,9 +30,12 @@ Route::get('/home', function(){
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/', 'AdminController@index')->name('admin.dash');
     Route::get('/addvote', 'AdminController@formUser')->name('admin.addVote');
-    Route::get('/showvote', 'AdminController@searchUser')->name('admin.search');
-    Route::post('/showvote', 'AdminController@indexUser')->name('admin.showuser');
+    Route::get('/search', 'AdminController@searchUser')->name('admin.search');
+    Route::post('/index/kelas/', 'AdminController@indexUser')->name('admin.showuser');
     Route::post('/store', 'AdminController@storeUser')->name('admin.store');
+    Route::get('/destroy/{id}','AdminController@destroyUser')->name('admin.destroy');
+    Route::get('/show/{id}','AdminController@showUser')->name('admin.destroy');
+    Route::post('/edit/{id}','AdminController@editUser')->name('admin.edit');
 });
 
 // User

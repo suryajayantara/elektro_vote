@@ -6,14 +6,11 @@
 href="{{ url('/admin') }}"
 @endsection
 
-@section('title','Tambah Data')
+@section('title',"Edit Data $datas[name]")
 
-
-
-@section('form')
 
 @if ($errors->any())
-<div class="alert alert-danger mt-3" role="alert">
+<div class="alert alert-danger" role="alert">
   <h1>Kesalahan !</h1>
   @foreach ($errors->all() as $error)
     <li>{{$error}} </li>
@@ -21,26 +18,20 @@ href="{{ url('/admin') }}"
 </div>
 @endif
 
-@if (session('success'))
-    
-  <div class="alert alert-primary mt-3" role="alert">
-      {{session('success')}}
-  </div>
-@endif
-
-<form action=" {{route('admin.store')}} " method="POST">
+@section('form')
+<form action=" /admin/edit/{{$datas['id']}} " method="POST">
 
   {{ csrf_field() }}
 
 
   <div class="form-group mt-3">
     <label for="name">Nama Mahasiswa</label>
-    <input type="text" class="form-control" id="name" name="name">
+    <input type="text" class="form-control" id="name" name="name" value="{{$datas['name']}}">
   </div>
 
   <div class="form-group">
     <label for="nim">Nim Mahasiswa</label>
-    <input type="number" class="form-control" id="num" name="nim">
+    <input type="number" class="form-control" id="num" name="nim" value="{{$datas['nim']}}">
   </div>
 
   <div class="form-group mt-3 ">

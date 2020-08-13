@@ -6,7 +6,7 @@
 href="{{ url('/admin') }}"
 @endsection
 
-@section('title','Tambah Data')
+@section('title','Data Kelas')
 
 
 @if ($errors->any())
@@ -55,7 +55,7 @@ href="{{ url('/admin') }}"
         </select>
       </div>
     
-      <input type="submit" class="btn btn-primary float-right mb-3" value="Tambahkan">
+      <input type="submit" class="btn btn-primary float-right mb-3" value="Tampilkan">
 </form>
 
 
