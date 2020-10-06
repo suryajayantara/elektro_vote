@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email',100)->unique()->nullable();
             $table->string('nim',15)->unique()->nullable();
             $table->string('kelas',10)->nullable();
-            $table->enum('prodi',['MI','TO','TL']);
+            $table->enum('prodi',['MI','TO','TL','TRPL']);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password',100);
             $table->boolean('status_pilih')->nullable();

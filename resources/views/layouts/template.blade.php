@@ -12,6 +12,9 @@
     <link rel="shortcut icon" href="{!! asset('img/logo.png') !!}" type="image/x-icon">
 
     <script src="https://kit.fontawesome.com/e656f4cdd7.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     
     <link rel="stylesheet" href="{!! asset('css/template.css') !!}">
     @yield('mainstyle')

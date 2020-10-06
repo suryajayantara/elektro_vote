@@ -22,6 +22,9 @@ Route::get('/', function () {
 // Default Routes
 Auth::routes();
 
+route::get('/test',function(){
+    return view('pages.menucontest');
+});
 
 Route::get('/home', function(){
     return view('welcome');
@@ -43,4 +46,10 @@ Route::group(['prefix' => 'users'], function () {
     Route::get('/','StudentController@index')->name('user.dashboard');
     Route::get('rules','StudentController@viewRules')->name('user.rules');
     Route::get('vote','StudentController@viewVote')->name('user.vote');
+    Route::get('contestant','StudentController@viewContestant')->name('user.contestant');
+    Route::group(['prefix' => 'contestant'], function () {
+        route::get('/1','ContestantController@contestant_one')->name('contestant.one');
+        route::get('/2','ContestantController@contestant_two')->name('contestant.two');
+    });
+    Route::get('/rules','ContestantController@rules')->name('user.rules');
 });

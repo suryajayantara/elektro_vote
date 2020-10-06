@@ -1,5 +1,5 @@
 body .header {
-  background-color: #0984e3;
+  background-color: #ff7675;
 }
 
 body .header .title {
@@ -41,6 +41,10 @@ body .content h5 {
   font-size: 18px;
 }
 
+.font-info{
+  font-family: 'Dancing Script', cursive;
+}
+
 body .content a {
   text-decoration: none;
 }
@@ -50,7 +54,7 @@ body .content .cardku {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-left: solid #0984e3 5px;
+  border-left: solid #ff7675 5px;
 }
 
 body .content .cardku img {
@@ -60,4 +64,11 @@ body .content .cardku img {
 body .content .cardku h3 {
   font-size: 20px;
 }
+
+@media only screen and (max-width: 600px) {
+  .img-menu{
+    height: 5rem;
+  }
+}
+
 /*# sourceMappingURL=index.css.map */

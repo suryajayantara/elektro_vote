@@ -14,14 +14,14 @@
                             
                             <div class="title" style="background-color : @yield('warna') ;">
                                 <a class="btn kembali" @yield('asal') ><i class="fas fa-arrow-left"></i></a>
-                                <h4 class="text-center text-white">@yield('title')</h4>
+                                <h5 class="text-center text-white">@yield('title')</h5>
                             </div>
                             <div class="container">
                                 <div class="row justify-content-center">
                                     <div class="col">
                                         @yield('form')
                                     </div>
-                                </div>
+                                </div>  
                             </div>
             
                         </div>

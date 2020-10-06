@@ -23,7 +23,13 @@ class StudentController extends Controller
 
     public function viewVote()
     {
-        return view('pages/voting');
+        return view('pages/vote');
     }
+
+    public function viewContestant()
+    {
+        return view('pages.menucontest');
+    }
+
 
 }
